@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1> Log in </h1>
+    {% if next %}
+    <form action="/login/?next={{next}}" method="post">
+    {% else %}
+    <form action="/login/" method="post">
+    {% endif %}
+        {% csrf_token %}
+        {{ form }}
+        <input id="submit-btn" type="submit" value="Send" class="btn btn-primary">
+    </form> 
+ {% endblock %}

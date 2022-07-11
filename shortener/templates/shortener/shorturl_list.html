@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+{% if  user.is_authenticated %}
+    <h1>Hello, {{ user }} </h1> 
+    {% for url in object_list %}
+        <p>Your short url <a href="{{ url.url }}"> localhost:8000/app/{{ url.short_url }}</a> from <a href="{{ url.url }}"> {{ url.url }} </a></p>
+
+    {% endfor %}
+{% else %}
+    {% for url in object_list %}
+        {% if forloop.first %}
+            <h1><p> Your short url it's <a href="{{ url.url }}"> localhost:8000/app/{{ url.short_url }}</a> from <a href="{{ url.url }}"> {{ url.url }} </a></p>
+            {% endif %}
+            {% endfor %}
+{% endif %}
+{% endblock %}
