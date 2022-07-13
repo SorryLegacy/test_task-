@@ -4,10 +4,10 @@
         {% if user.is_authenticated %}
         Пользователь: {{ user.username }}.
         <a class="p-2 text-dark" href="{% url 'profile' %}"> Profile </a>
-        <a class="p-2 text-dark" href="{% url 'logout' %}">Выйти</a>
+        <a class="p-2 text-dark" href="{% url 'logout' %}">Log out</a>
         {% else %}
-        <a class="p-2 text-dark" href="{% url 'login' %}">Войти</a> |
-        <a class="p-2 text-dark" href="{% url 'signup' %}">Регистрация</a>
+        <a class="p-2 text-dark" href="{% url 'login' %}">Log in</a> |
+        <a class="p-2 text-dark" href="{% url 'signup' %}">Sign up</a>
         {% endif %}
     </nav>
 </nav>

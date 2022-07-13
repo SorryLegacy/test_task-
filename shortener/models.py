@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class ShortUrl(models.Model):
-    """ """
+    """Model Url"""
     url = models.URLField(verbose_name="Normal Url")
     short_url = models.CharField(verbose_name="Short Url", max_length=11, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)

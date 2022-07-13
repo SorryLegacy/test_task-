@@ -10,7 +10,7 @@ from .forms import CreationForm, UrlForm
 
 
 class UrlShotener(CreateView):
-    """"""
+    """Class to make short url"""
     model = ShortUrl
     queryset = ShortUrl.objects.all()
     form_class = UrlForm
@@ -28,17 +28,16 @@ class UrlShotener(CreateView):
         self.object.save()
         return super(UrlShotener, self).form_valid(form)
 
-    
 
 class SignUp(CreateView):
-    """"""
+    """Class for sign up people"""
     form_class = CreationForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
 
 
 class UserUrl(ListView):
-    """"""
+    """Class for user profile"""
     model = ShortUrl
 
     def get_queryset(self):
@@ -50,8 +49,7 @@ class UserUrl(ListView):
 
 
 class RedirectUrl(RedirectView):
-
+    """Class for redirect with short url"""
     def get_redirect_url(self, short):
         url = ShortUrl.objects.get(short_url=short)
-        
         return url.url
