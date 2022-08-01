@@ -11,7 +11,7 @@
 For authorized users their links are saved and you can see them in the profile
 
 <h2>To start</h2>
-<p><code>git clone https://github.com/SorryLegacy/test_task-.githttps://github.com/SorryLegacy/test_task-.git</code></p>
+<p><code>git clone https://github.com/SorryLegacy/test_task-.git
 <p><code> docker-compose up -d</code></p> 
 
 And input http://localhost:8000/ on your browser to see webpage
